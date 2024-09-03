@@ -1,0 +1,16 @@
+{
+  "name": "javastript-missao-aprendizado-iniciante-fundamentos-de-javascript",
+  "version": "1.0.0",
+  "description": "Projeto da Missão de Aprendizado do nível iniciante: Fundamentos de JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
