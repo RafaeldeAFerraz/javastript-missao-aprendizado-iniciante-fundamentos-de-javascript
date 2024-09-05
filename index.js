@@ -212,7 +212,8 @@
 // console.log(entradas[0])  // [ 'marca', 'Toyota' ]
 
 // ------------------------------------------------------------
-// -----  Estruturas de controle: Condicionais - if/else ------
+// -----------------  Estruturas de controle: -----------------
+// -----------------  Condicionais - If/Else  -----------------
 // ------------------------------------------------------------
 
 // If/Else: Executa um bloco de código se uma condição for cerdadeira; caso contrário, executa outro bloco de código.
@@ -249,9 +250,9 @@
 //     console.log('F')
 // }
 
-
 // ------------------------------------------------------------
-// -----  Estruturas de controle: Condicionais - Switch -------
+// -----------------  Estruturas de controle: -----------------
+// ------------------  Condicionais - Switch  -----------------
 // ------------------------------------------------------------
 
 // Switch: Executa um bloco de código entre vários, baseado no valor de uma expressão.
@@ -271,7 +272,8 @@
 
 
 // ------------------------------------------------------------
-// --------  Estruturas de controle: Loops - For Loop ---------
+// -----------------  Estruturas de controle: -----------------
+// --------------------  Loops - For Loop  --------------------
 // ------------------------------------------------------------
 
 // For Loop: Executa um bloco de código um numero específico de vezes
@@ -282,7 +284,8 @@
 
 
 // ------------------------------------------------------------
-// --------  Variáveis: Objetos - Loops - For ...in -----------
+// -----------------  Estruturas de controle: -----------------
+// -------------------  Loops - For ...in  --------------------
 // ------------------------------------------------------------
 
 // 1. For ...in com Arrays: Itera sobre todos os índices de um array.
@@ -305,10 +308,11 @@
 //     console.log(`${i}: ${pessoa[i]}`)
 // }
 
+// ------------------------------------------------------------
+// -----------------  Estruturas de controle: -----------------
+// -------------------  Loops - For ...of  --------------------
+// ------------------------------------------------------------
 
-// ------------------------------------------------------------
-// --------  Variáveis: Objetos - Loops - For ...of -----------
-// ------------------------------------------------------------
 
 // 1. For ...of com Arrays: Itera sobre todos os elementos de um array.
 // 2. For ...of com Strings: Itera sobre os caracteres de uma string.
@@ -328,7 +332,8 @@
 
 
 // ------------------------------------------------------------
-// --------  Variáveis: Objetos - Loops - While Loop ----------
+// -----------------  Estruturas de controle: -----------------
+// ------------------- Loops - While Loop ---------------------
 // ------------------------------------------------------------
 
 // While Loop Executa um bloco de código enquanto uma condição for verdadeira.
@@ -341,13 +346,170 @@
 
 
 // ------------------------------------------------------------
-// ------  Variáveis: Objetos - Loops - Do While Loop ---------
+// -----  Estruturas de controle: - Loops - Do While Loop -----
 // ------------------------------------------------------------
 
 // Do While Loop: Executa um bloco de código pelo menos uma vez, e depois continua a execução enquanto uma consição for verdadeira.
 
-let i = 0
-do {
-    console.log(i)
-    i++
-} while (i < 5)
+// let i = 0
+// do {
+//     console.log(i)
+//     i++
+// } while (i < 5)
+
+
+// ------------------------------------------------------------
+// -------------------  Funções e Escopo ----------------------
+// ------------------------------------------------------------
+
+// Declaração de Função: Bloco de código que pode ser reutilizado. Pode receber parâmetros e retornar um valor.
+
+//              Parametro
+// function saudacao(nome) {
+//     return `Olá, ${nome}`
+// }
+// console.log(saudacao('Maria'))
+//                  Argumento
+
+
+// ------------------------------------------------------------
+// -------------------  Funções e Escopo ----------------------
+// ----------  Funções Anônimas e Arrow Functions -------------
+// ------------------------------------------------------------
+
+// Funções Anônimas e Arrow Functions: Formas alternativas de declarar funções, com sintaxe mais concisa.
+
+// 1. Função anônima
+// 2. Arrow Functions
+// Arrow function reduzida
+
+// const saudacaoAnonima = function(nome) {
+//     return `Olá, ${nome}`
+// }
+// console.log(saudacaoAnonima('João'))
+
+
+// const saudacaoArrow = (nome) => {
+//     return `Olá, ${nome}`
+// }
+// console.log(saudacaoArrow('Ana'))
+
+
+// const saudacaoArrowReduzida = (nome) => `Olá, ${nome}`
+// console.log(saudacaoArrowReduzida('Pedro'))
+
+
+// ------------------------------------------------------------
+// -------------------  Funções e Escopo ----------------------
+// ------------  Funções Com return vs Sem return -------------
+// ------------------------------------------------------------
+
+// 1. Com return: A função retorna um valor que pode ser usado posteriormente.
+// 2. Sem return: A função executa uma ação, mas não retorna um valor.
+
+// function soma(a, b) {
+//     return a + b
+// }
+// const resultado = soma(2, 3)
+// console.log(resultado)
+
+
+// function mostrarMensagem(mensagem) {
+//     console.log(mensagem)
+// }
+// mostrarMensagem('Olá, Mundo!')
+
+
+// ------------------------------------------------------------
+// -------------------  Funções e Escopo ----------------------
+// -------------  Escopo de Função e de Bloco -----------------
+// ------------------------------------------------------------
+
+// 1. Escopo de Função: variáveis definidas dentro de uma função não são acessíveis fora dela.
+// 2. Escolo de Bloco: Variáveis definidas dentro de um bloco ( {} ) são acessíveis apenas dentro deste bloco.
+
+// function exemploEscopo() {
+//     let mensagem = 'Olá, Mundo!'
+//     console.log(mensagem)
+// }
+// exemploEscopo()
+// // console.log(mensagem)
+
+
+// if (true) {
+//     let mensagem = 'Olá, Mundo!'
+//     console.log(mensagem)
+// }
+// // console.log(mensagem)
+
+
+// ------------------------------------------------------------
+// -------------------  Funções e Escopo ----------------------
+// ------------------  Funções Assíncronas --------------------
+// ------------------------------------------------------------
+
+// Funções Assíncronas: Funções que permitem o uso de operações assíncronas, como chamadas de rede sem bloquear o fluxo do programa.
+
+// const fetchData = async () => {
+//     try {
+//         const response = await fetch('https://api.exemplo.com/dados')
+//         const data = await response.json()
+//         console.log(data)
+//     } catch (error) {
+//         console.error('Erro ao buscar dados:', error)
+//     }
+// }
+// fetchData()
+
+
+// ------------------------------------------------------------
+// -------------------  Funções e Escopo ----------------------
+// -------------------  Funções Callbaks ----------------------
+// ------------------------------------------------------------
+
+// 2. Callbacks: Funções passadas como argumentos para outras funções, permitindo a execução assíncrona de código após a conclusão de uma operação.
+
+// function fetchData(callback) {
+//     setTimeout(() => {
+//         callback('Dados recebidos')
+//     }, 1000)
+// }
+// fetchData((mensagem) => {
+//     console.log(mensagem)
+// })
+
+
+// ------------------------------------------------------------
+// -------------  Tratamento de Erros e Exceções --------------
+// ----------------------  Try/Catch --------------------------
+// ------------------------------------------------------------
+
+// Try/Catch: Blocos de código que permitem capturar e tratar erros durante a execução de operações assíncronas
+
+// try {
+//     const resultado = someFunction()
+//     console.log(resultado)
+// } catch (error) {
+//     console.error('Erro:', error)
+// }
+
+
+// ------------------------------------------------------------
+// --------------------  Uso de Módulos -----------------------
+// --------------  Require/Import Statements ------------------
+// ------------------------------------------------------------
+
+// Importação e Exportação de Módulos: Permite a modularização do código, facilitando a organização e reutilização de funcionalidades em diferentes partes do projeto.
+
+// 1. modulo.js
+// 2. index.js
+
+// export function saudacao(nome) {
+//     return `Olá, ${nome}`
+// }
+
+
+// import {saudacao} from './modulo.js'
+// console.log(saudacao('Maria'))
+
+
